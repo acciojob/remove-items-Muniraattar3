@@ -1,10 +1,13 @@
-//your JS code here. If required.
-document.querySelector('input[typr="button"]').addEventListener("click", function(){
-	const colorSelect = document.getElementById("colorSelect");
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector('input[type="button"]');
+    if (button) {
+        button.addEventListener("click", function () {
+            const colorSelect = document.getElementById("colorSelect");
 
-	const selectedOption = colorSelect.options[colorSelect.selectedIndex];
-
-	if(selectedOption){
-		colorSelect.remove(colorSelect.selectedIndex);
-	}
+            // Ensure colorSelect exists
+            if (colorSelect && colorSelect.selectedIndex !== -1) {
+                colorSelect.remove(colorSelect.selectedIndex);
+            }
+        });
+    }
 });
